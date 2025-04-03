@@ -1,0 +1,5 @@
+TOPIC_BMP280_TEMP = "sensor/bmp280/temp"
+TOPIC_BMP280_PRESSURE = "sensor/bmp280/pressure"
+TOPIC_DHT22_TEMP = "sensor/dht22/temp"
+TOPIC_DHT22_HUMIDITY = "sensor/dht22/humidity"
+TOPIC_MQ135_AIR_QUALITY = "sensor/mq135/air_quality"

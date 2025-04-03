@@ -1,0 +1,6 @@
+.venv/
+mqtt_data_log.csv
+
+__pycache__/
+
+pico/config.py
