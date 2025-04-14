@@ -17,3 +17,6 @@ MQTT_PORT =
 WIFI_SSID =
 WIFI_PASSWORD =
 ```
+
+## To generate packet losses and latency use clumsy
+[clumsy](https://github.com/jagt/clumsy/releases/download/0.3/clumsy-0.3-win64-a.zip)
