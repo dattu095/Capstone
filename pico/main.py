@@ -38,7 +38,7 @@ def main():
             print(f"Disconnected with code {rc}")
             connection_stats["reconnects"] += 1
         client.on_disconnect = on_disconnect
-    
+    QOS = 1
     try:
         while True:
             try:
@@ -49,7 +49,7 @@ def main():
                     "DHT22_TEMP",
                     temp_sensor.get_value()[0],
                     wlan,
-                    qos=0
+                    qos=QOS,
                 )
                 
                 # DHT22 Humidity
@@ -59,7 +59,7 @@ def main():
                     "DHT22_HUMIDITY",
                     temp_sensor.get_value()[1],
                     wlan,
-                    qos=0
+                    qos=QOS,
                 )
                 
                 # BMP280 Temperature
@@ -69,7 +69,7 @@ def main():
                     "BMP280_TEMP",
                     pressure_sensor.get_value()[0],
                     wlan,
-                    qos=0
+                    qos=QOS,
                 )
                 
                 # BMP280 Pressure
@@ -79,7 +79,7 @@ def main():
                     "BMP280_PRESSURE",
                     pressure_sensor.get_value()[1],
                     wlan,
-                    qos=0
+                    qos=QOS,
                 )
                 
                 # MQ135 Air Quality
@@ -89,9 +89,9 @@ def main():
                     "MQ135_AIR_QUALITY",
                     smoke_sensor.get_value(),
                     wlan,
-                    qos=0
+                    qos=QOS,
                 )
-                
+                    
             except Exception as e:
                 print(f"Error publishing data: {e}")
                 connection_stats["message_failures"] += 1
@@ -105,8 +105,6 @@ def main():
                     except:
                         print("Reconnection failed")
             
-            # Standard delay between readings
-            time.sleep(2)
             
     except KeyboardInterrupt:
         print("Program stopped by user")

@@ -1,6 +1,9 @@
 .venv/
-*.csv
+**/*.csv
 
 __pycache__/
 
-pico/config.py
+clumsy/
+
+dataset/
+dataset.zip

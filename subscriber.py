@@ -40,7 +40,7 @@ network_stats = {
 }
 
 # CSV File Setup
-csv_filename = "mqtt_complete_dataset.csv"
+csv_filename = "dataset/final_dataset_4.csv"
 csv_headers = [
     "Timestamp",
     "Time_of_Day",
@@ -340,7 +340,7 @@ def parse_enhanced_payload(payload):
         # Expected format based on your updated publish_sensor_data function
         parts = payload.split(",")
 
-        if len(parts) >= 9:  # Basic check for minimum expected fields
+        if len(parts) >= 10:  # Basic check for minimum expected fields
             return {
                 "timestamp": float(parts[0]),
                 "sensor_id": parts[1],
@@ -351,7 +351,8 @@ def parse_enhanced_payload(payload):
                 "memory_percent": int(parts[6]),
                 "cpu_freq": int(parts[7]),
                 "reset_cause": int(parts[8]),
-                "network_condition": parts[9] if len(parts) > 9 else "unknown",
+                "qos": int(parts[9]),
+                "network_condition": parts[10] if len(parts) > 10 else "unknown",
             }
         else:
             # Fallback for old format
