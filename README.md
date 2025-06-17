@@ -1,6 +1,9 @@
 # Capstop IOT part
 This repo is for Capstop IOT project.
 
+## Mosquitto Installation
+install [mosquitto](https://mosquitto.org/download/) broker. 
+
 ## BMP280 sensor
 clone this repo [BMP280](https://github.com/flrrth/pico-bmp280.git) and upload bmp280 to pico w /lib
 
