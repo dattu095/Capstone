@@ -6,4 +6,5 @@ __pycache__/
 clumsy/
 
 dataset/
-dataset.zip
+
+pico-bmp280/
